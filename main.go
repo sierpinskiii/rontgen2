@@ -210,7 +210,7 @@ func main() {
 
 		// Handle based on the boolean values of 'next' and 'prev'
 		if next {
-			lecture.CurrentSlide = (lecture.CurrentSlide + 1) % (lecture.Length + 1)
+			lecture.CurrentSlide = (lecture.CurrentSlide + 1) % lecture.Length
 		} else if prev {
 			if lecture.CurrentSlide == 0 {
 				lecture.CurrentSlide = lecture.Length - 1
