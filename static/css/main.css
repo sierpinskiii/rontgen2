@@ -1,0 +1,36 @@
+body {
+  margin: 0 auto;
+  width: 95%;
+}
+
+.outer {
+  margin: 0 auto;
+  width: auto;
+}
+
+.topmenu {
+  margin-right: 15px;
+}
+
+.w3-allerta {
+  font-family: "Allerta Stencil", Sans-serif;
+}
+
+
+#present-studentin:after {content: "Lecture Slides"}
+#present-studentin:hover:after {content: "Prelego Diapozitivoj"}
+
+#present-lehrer:after {content: "Lecture Control"}
+#present-lehrer:hover:after {content: "Prelego Kontrolo"}
+
+#present-lehrer-upload:after {content: "Upload Slides"}
+#present-lehrer-upload:hover:after {content: "Alŝutu diapozitivojn"}
+
+#login:after {content: "Login"}
+#login:hover:after {content: "Hello"}
+
+#logout:after {content: "Logout"}
+#logout:hover:after {content: "Goodbye"}
+
+#src-wiki:after {content: "AQUARIUM Wiki"}
+#src-wiki:hover:after {content: "AKVARIO Vikio"}

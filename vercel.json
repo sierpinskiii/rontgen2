@@ -1,0 +1,21 @@
+{
+    "version": 2,
+    "builds": [
+        {
+            "src": "main.go",
+            "use": "@vercel/go",
+            "config": {
+                "maxLambdaSize": "15mb"
+            }
+        }
+    ],
+    "routes": [
+        {
+            "src": "/.*",
+            "dest": "main.go"
+        }
+    ],
+    "env": {
+        "GO111MODULE": "on"
+    }
+}

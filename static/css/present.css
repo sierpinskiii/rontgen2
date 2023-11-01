@@ -1,0 +1,42 @@
+body {
+  margin: 0 auto;
+  width: 70%;
+}
+
+.topmenu {
+  margin-right: 20px;
+}
+
+#main {
+  display: flex;
+  align-items: center;
+}
+
+.menubtn {
+  margin-left: 20px;
+}
+
+.outer {
+  margin: 0 auto;
+  width: auto;
+  text-align: center;
+}
+
+.slide {
+  margin: 0 auto;
+  width: 100%;
+  border: 2px solid black;
+}
+
+#screen {
+  margin: 0 auto;
+  width: 100%;
+  border: 2px solid black;
+}
+
+.center {
+  margin: auto;
+  width: 100%;
+  border: 2px solid black;
+  padding: 10px;
+}
