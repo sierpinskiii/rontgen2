@@ -9,10 +9,12 @@ RUN apt-get update && \
     rm -rf /var/lib/apt/lists/*
 
 # Clone the repository
-RUN git clone https://github.com/sierpinskiii/rontgen2.git
+# RUN git clone https://github.com/sierpinskiii/rontgen2.git
 
 # Change working directory to the cloned repo
 WORKDIR /rontgen2
+
+COPY . .
 
 # Build the Go application
 RUN go build
