@@ -22,3 +22,4 @@ go.work
 
 lectures/*
 *.db
+users.json

@@ -10,6 +10,9 @@ import (
 	"strconv"
 	"time"
 
+	"encoding/json"
+	"io/ioutil"
+
 	"github.com/gin-gonic/gin"
 	"gorm.io/driver/sqlite"
 	"gorm.io/gorm"
@@ -46,9 +49,12 @@ var UUID = "default-lecture-dir"
 
 // var PORT = 8080
 
+/*
+// get username and password from users.json
 var users = map[string]string{
 	"admin": "password123",
 }
+*/
 
 func main() {
 	PORT := os.Getenv("PORT")
@@ -57,6 +63,19 @@ func main() {
 	}
 
 	r := gin.Default()
+
+	users := make(map[string]string)
+	// Read the JSON file into a byte slice
+	data, err := ioutil.ReadFile("users.json")
+	if err != nil {
+		log.Fatalf("unable to read file: %v", err)
+	}
+
+	// Parse the byte slice into the users map
+	err = json.Unmarshal(data, &users)
+	if err != nil {
+		log.Fatalf("unable to parse user data: %v", err)
+	}
 
 	// Setup session middleware
 	store := cookie.NewStore([]byte("secret"))
@@ -272,7 +291,7 @@ func main() {
 			"nice", "-20",
 			"convert", "-density", "300",
 			lecDirPath+"original.pdf",
-			"-resize", "25%",
+			"-resize", "30%",
 			lecDirPath+"slide.png")
 		err = cmd.Run()
 		if err != nil {
